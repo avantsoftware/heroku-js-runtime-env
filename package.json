@@ -1,5 +1,5 @@
 {
-  "name": "@mars/heroku-js-runtime-env",
+  "name": "@avantsoft/js-runtime-env",
   "version": "3.0.2",
   "description": "Runtime env var support for static javascript apps on Heroku",
   "main": "index.js",
