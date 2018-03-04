@@ -24,12 +24,9 @@ function loadRuntimeEnv() {
     try {
       env = JSON.parse(runtimeEnv);
     } catch(error) {
-      env = {};
-      var overflowsMessage = runtimeEnv.slice(32,33) != null;
-      console.error(
-        'Runtime env vars cannot be parsed. '+
-        'Content is `'+runtimeEnv.slice(0,31)+( overflowsMessage ? '…' : '' )+'`'
-      );
+      // Fallback to compile time env
+      env = compileTimeEnv;
+      console.log('Runtime env vars cannot be parsed. Falling back to compile-time environment.');
     }
 
   } else {
